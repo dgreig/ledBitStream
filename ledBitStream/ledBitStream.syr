@@ -1,0 +1,502 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: ledBitStream.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ledBitStream.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ledBitStream"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-ft256
+
+---- Source Options
+Top Module Name                    : ledBitStream
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Engineering/FPGA/VHDL/ledBitStream/ledBitStream_pkg.vhd" in Library work.
+Architecture ledbitstream_pkg of Entity ledbitstream_pkg is up to date.
+Compiling vhdl file "C:/Engineering/FPGA/VHDL/ledBitStream/LEDS.vhd" in Library work.
+Entity <ledbitstream> compiled.
+Entity <ledbitstream> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <ledBitStream> in library <work> (architecture <behavioral>).
+
+INFO:Xst:2555 - '-hierarchy_separator' switch is being deprecated in a future release.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <ledBitStream> in library <work> (Architecture <behavioral>).
+INFO:Xst:1432 - Contents of array <aReg> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <aReg> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1432 - Contents of array <aReg> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <aReg> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Entity <ledBitStream> analyzed. Unit <ledBitStream> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ledBitStream>.
+    Related source file is "C:/Engineering/FPGA/VHDL/ledBitStream/LEDS.vhd".
+WARNING:Xst:653 - Signal <aReg> is used but never assigned. This sourceless signal will be automatically connected to value 001000000000000000000000001100000000000000000000.
+    Found 48x1-bit ROM for signal <$varindex0000> created at line 63.
+    Found 4x32-bit ROM for signal <bitCount$mux0003> created at line 75.
+    Found 1-bit register for signal <hbOut>.
+    Found 1-bit register for signal <dataOut>.
+    Found 32-bit register for signal <bitCount>.
+    Found 2-bit comparator equal for signal <bitCount$cmp_eq0001> created at line 77.
+    Found 32-bit comparator greater for signal <bitCount$cmp_gt0000> created at line 55.
+    Found 12-bit comparator lessequal for signal <bitCount$cmp_le0000> created at line 56.
+    Found 32-bit comparator lessequal for signal <bitCount$cmp_le0001> created at line 55.
+    Found 32-bit addsub for signal <bitCount$mux0001> created at line 75.
+    Found 12-bit register for signal <counter>.
+    Found 12-bit adder for signal <counter$add0000> created at line 72.
+    Found 12-bit comparator lessequal for signal <counter$cmp_le0000> created at line 69.
+    Found 12-bit comparator lessequal for signal <counter$cmp_le0001> created at line 67.
+    Found 12-bit comparator lessequal for signal <counter$cmp_le0002> created at line 91.
+    Found 12-bit comparator greater for signal <dataOut$cmp_gt0000> created at line 56.
+    Found 12-bit comparator greater for signal <dataOut$cmp_gt0001> created at line 69.
+    Found 5-bit register for signal <pixBitCount>.
+    Found 5-bit adder for signal <pixBitCount$addsub0000> created at line 85.
+    Found 2-bit register for signal <pixDupCount>.
+    Found 2-bit adder for signal <pixDupCount$addsub0000> created at line 81.
+    Found 26-bit up counter for signal <timer1>.
+    Summary:
+	inferred   2 ROM(s).
+	inferred   1 Counter(s).
+	inferred  53 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   9 Comparator(s).
+Unit <ledBitStream> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 48x1-bit ROM                                          : 1
+ 4x32-bit ROM                                          : 1
+# Adders/Subtractors                                   : 4
+ 12-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 32-bit addsub                                         : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 6
+ 1-bit register                                        : 2
+ 12-bit register                                       : 1
+ 2-bit register                                        : 1
+ 32-bit register                                       : 1
+ 5-bit register                                        : 1
+# Comparators                                          : 9
+ 12-bit comparator greater                             : 2
+ 12-bit comparator lessequal                           : 4
+ 2-bit comparator equal                                : 1
+ 32-bit comparator greater                             : 1
+ 32-bit comparator lessequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <ledBitStream>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom__varindex0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <ledBitStream> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 48x1-bit ROM                                          : 1
+ 4x32-bit ROM                                          : 1
+# Adders/Subtractors                                   : 4
+ 12-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 32-bit addsub                                         : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 53
+ Flip-Flops                                            : 53
+# Comparators                                          : 9
+ 12-bit comparator greater                             : 2
+ 12-bit comparator lessequal                           : 4
+ 2-bit comparator equal                                : 1
+ 32-bit comparator greater                             : 1
+ 32-bit comparator lessequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <ledBitStream> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ledBitStream, actual ratio is 4.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 79
+ Flip-Flops                                            : 79
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ledBitStream.ngr
+Top Level Output File Name         : ledBitStream
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 5
+
+Cell Usage :
+# BELS                             : 325
+#      GND                         : 1
+#      INV                         : 8
+#      LUT1                        : 41
+#      LUT2                        : 37
+#      LUT2_D                      : 2
+#      LUT2_L                      : 2
+#      LUT3                        : 35
+#      LUT4                        : 35
+#      LUT4_D                      : 4
+#      LUT4_L                      : 2
+#      MUXCY                       : 87
+#      VCC                         : 1
+#      XORCY                       : 70
+# FlipFlops/Latches                : 79
+#      FD                          : 27
+#      FDE                         : 40
+#      FDR                         : 12
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 4
+#      IBUF                        : 2
+#      OBUF                        : 2
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                       86  out of   1920     4%  
+ Number of Slice Flip Flops:             79  out of   3840     2%  
+ Number of 4 input LUTs:                166  out of   3840     4%  
+ Number of IOs:                           5
+ Number of bonded IOBs:                   5  out of    173     2%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 79    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 10.561ns (Maximum Frequency: 94.688MHz)
+   Minimum input arrival time before clock: 10.688ns
+   Maximum output required time after clock: 7.165ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 10.561ns (frequency: 94.688MHz)
+  Total number of paths / destination ports: 9301 / 131
+-------------------------------------------------------------------------
+Delay:               10.561ns (Levels of Logic = 36)
+  Source:            pixBitCount_2 (FF)
+  Destination:       bitCount_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: pixBitCount_2 to bitCount_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              6   0.720   1.342  pixBitCount_2 (pixBitCount_2)
+     LUT2_D:I0->O          2   0.551   0.903  bitCount_cmp_eq0000_SW0 (N6)
+     LUT4_D:I3->O          1   0.551   0.869  bitCount_cmp_eq0000_1 (bitCount_cmp_eq00001)
+     LUT3:I2->O            1   0.551   0.000  Maddsub_bitCount_mux0001_lut<0> (Maddsub_bitCount_mux0001_lut<0>)
+     MUXCY:S->O            1   0.500   0.000  Maddsub_bitCount_mux0001_cy<0> (Maddsub_bitCount_mux0001_cy<0>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<1> (Maddsub_bitCount_mux0001_cy<1>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<2> (Maddsub_bitCount_mux0001_cy<2>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<3> (Maddsub_bitCount_mux0001_cy<3>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<4> (Maddsub_bitCount_mux0001_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<5> (Maddsub_bitCount_mux0001_cy<5>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<6> (Maddsub_bitCount_mux0001_cy<6>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<7> (Maddsub_bitCount_mux0001_cy<7>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<8> (Maddsub_bitCount_mux0001_cy<8>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<9> (Maddsub_bitCount_mux0001_cy<9>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<10> (Maddsub_bitCount_mux0001_cy<10>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<11> (Maddsub_bitCount_mux0001_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<12> (Maddsub_bitCount_mux0001_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<13> (Maddsub_bitCount_mux0001_cy<13>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<14> (Maddsub_bitCount_mux0001_cy<14>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<15> (Maddsub_bitCount_mux0001_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<16> (Maddsub_bitCount_mux0001_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<17> (Maddsub_bitCount_mux0001_cy<17>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<18> (Maddsub_bitCount_mux0001_cy<18>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<19> (Maddsub_bitCount_mux0001_cy<19>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<20> (Maddsub_bitCount_mux0001_cy<20>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<21> (Maddsub_bitCount_mux0001_cy<21>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<22> (Maddsub_bitCount_mux0001_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<23> (Maddsub_bitCount_mux0001_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<24> (Maddsub_bitCount_mux0001_cy<24>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<25> (Maddsub_bitCount_mux0001_cy<25>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<26> (Maddsub_bitCount_mux0001_cy<26>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<27> (Maddsub_bitCount_mux0001_cy<27>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<28> (Maddsub_bitCount_mux0001_cy<28>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<29> (Maddsub_bitCount_mux0001_cy<29>)
+     MUXCY:CI->O           0   0.064   0.000  Maddsub_bitCount_mux0001_cy<30> (Maddsub_bitCount_mux0001_cy<30>)
+     XORCY:CI->O           1   0.904   0.996  Maddsub_bitCount_mux0001_xor<31> (bitCount_mux0001<31>)
+     LUT2:I1->O            1   0.551   0.000  bitCount_mux0002<0>1 (bitCount_mux0002<0>)
+     FDE:D                     0.203          bitCount_31
+    ----------------------------------------
+    Total                     10.561ns (6.451ns logic, 4.110ns route)
+                                       (61.1% logic, 38.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 946 / 34
+-------------------------------------------------------------------------
+Offset:              10.688ns (Levels of Logic = 36)
+  Source:            pixDupFactor<1> (PAD)
+  Destination:       bitCount_31 (FF)
+  Destination Clock: clk rising
+
+  Data Path: pixDupFactor<1> to bitCount_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.821   1.140  pixDupFactor_1_IBUF (pixDupFactor_1_IBUF)
+     LUT4_D:I0->O         31   0.551   2.186  bitCount_cmp_eq000121 (bitCount_cmp_eq0001)
+     LUT2:I0->O            1   0.551   0.801  Mrom_bitCount_mux000311 (Mrom_bitCount_mux00031)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<0> (Maddsub_bitCount_mux0001_cy<0>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<1> (Maddsub_bitCount_mux0001_cy<1>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<2> (Maddsub_bitCount_mux0001_cy<2>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<3> (Maddsub_bitCount_mux0001_cy<3>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<4> (Maddsub_bitCount_mux0001_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<5> (Maddsub_bitCount_mux0001_cy<5>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<6> (Maddsub_bitCount_mux0001_cy<6>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<7> (Maddsub_bitCount_mux0001_cy<7>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<8> (Maddsub_bitCount_mux0001_cy<8>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<9> (Maddsub_bitCount_mux0001_cy<9>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<10> (Maddsub_bitCount_mux0001_cy<10>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<11> (Maddsub_bitCount_mux0001_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<12> (Maddsub_bitCount_mux0001_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<13> (Maddsub_bitCount_mux0001_cy<13>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<14> (Maddsub_bitCount_mux0001_cy<14>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<15> (Maddsub_bitCount_mux0001_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<16> (Maddsub_bitCount_mux0001_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<17> (Maddsub_bitCount_mux0001_cy<17>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<18> (Maddsub_bitCount_mux0001_cy<18>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<19> (Maddsub_bitCount_mux0001_cy<19>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<20> (Maddsub_bitCount_mux0001_cy<20>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<21> (Maddsub_bitCount_mux0001_cy<21>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<22> (Maddsub_bitCount_mux0001_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<23> (Maddsub_bitCount_mux0001_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<24> (Maddsub_bitCount_mux0001_cy<24>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<25> (Maddsub_bitCount_mux0001_cy<25>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<26> (Maddsub_bitCount_mux0001_cy<26>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<27> (Maddsub_bitCount_mux0001_cy<27>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<28> (Maddsub_bitCount_mux0001_cy<28>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_bitCount_mux0001_cy<29> (Maddsub_bitCount_mux0001_cy<29>)
+     MUXCY:CI->O           0   0.064   0.000  Maddsub_bitCount_mux0001_cy<30> (Maddsub_bitCount_mux0001_cy<30>)
+     XORCY:CI->O           1   0.904   0.996  Maddsub_bitCount_mux0001_xor<31> (bitCount_mux0001<31>)
+     LUT2:I1->O            1   0.551   0.000  bitCount_mux0002<0>1 (bitCount_mux0002<0>)
+     FDE:D                     0.203          bitCount_31
+    ----------------------------------------
+    Total                     10.688ns (5.565ns logic, 5.123ns route)
+                                       (52.1% logic, 47.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              7.165ns (Levels of Logic = 1)
+  Source:            dataOut (FF)
+  Destination:       dataOut (PAD)
+  Source Clock:      clk rising
+
+  Data Path: dataOut to dataOut
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.720   0.801  dataOut (dataOut_OBUF)
+     OBUF:I->O                 5.644          dataOut_OBUF (dataOut)
+    ----------------------------------------
+    Total                      7.165ns (6.364ns logic, 0.801ns route)
+                                       (88.8% logic, 11.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.01 secs
+ 
+--> 
+
+Total memory usage is 301352 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

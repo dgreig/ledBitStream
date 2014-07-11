@@ -1,0 +1,28 @@
+
+
+NET "clk" LOC = T9;
+
+
+NET "clk" IOSTANDARD = LVCMOS25;
+
+
+# NET "reset" LOC = M13;
+NET "dataOut" LOC = N7;
+
+
+NET "dataOut" IOSTANDARD = LVCMOS33;
+# NET "reset" IOSTANDARD = LVCMOS33;
+NET "dataOut" SLEW = FAST;
+
+NET "hbOut" LOC = P11;
+#Created by Constraints Editor (xc3s200-ft256-4) - 2014/06/26
+NET "clk" TNM_NET = "clk";
+TIMESPEC TS_clk = PERIOD "clk" 25 ns HIGH 50 %;
+
+
+NET "pixDupFactor[0]" LOC = F12;
+NET "pixDupFactor[1]" LOC = G12;
+
+
+NET "pixDupFactor[1]" IOSTANDARD = LVCMOS33;
+NET "pixDupFactor[0]" IOSTANDARD = LVCMOS33;

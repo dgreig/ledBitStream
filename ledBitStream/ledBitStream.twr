@@ -1,0 +1,1070 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml ledBitStream.twx ledBitStream.ncd -o ledBitStream.twr
+ledBitStream.pcf -ucf ledBitStream.ucf
+
+Design file:              ledBitStream.ncd
+Physical constraint file: ledBitStream.pcf
+Device,package,speed:     xc3s200,ft256,-4 (PRODUCTION 1.39 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 25 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 9301 paths analyzed, 256 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  10.023ns.
+--------------------------------------------------------------------------------
+
+Paths for end point bitCount_31 (SLICE_X28Y23.F1), 270 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.977ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_0 (FF)
+  Destination:          bitCount_31 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      10.023ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_0 to bitCount_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y11.YQ      Tcko                  0.720   pixBitCount<1>
+                                                       pixBitCount_0
+    SLICE_X30Y13.G1      net (fanout=6)        0.683   pixBitCount<0>
+    SLICE_X30Y13.Y       Tilo                  0.608   bitCount_cmp_eq00002
+                                                       bitCount_cmp_eq0000_SW0
+    SLICE_X26Y13.G2      net (fanout=3)        0.980   N6
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.COUT    Tbyp                  0.128   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.Y       Tciny                 0.923   bitCount_mux0001<30>
+                                                       Maddsub_bitCount_mux0001_cy<30>
+                                                       Maddsub_bitCount_mux0001_xor<31>
+    SLICE_X28Y23.F1      net (fanout=1)        0.242   bitCount_mux0001<31>
+    SLICE_X28Y23.CLK     Tfck                  0.690   bitCount<31>
+                                                       bitCount_mux0002<0>1
+                                                       bitCount_31
+    -------------------------------------------------  ---------------------------
+    Total                                     10.023ns (6.794ns logic, 3.229ns route)
+                                                       (67.8% logic, 32.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.195ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_2 (FF)
+  Destination:          bitCount_31 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      9.805ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_2 to bitCount_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y12.XQ      Tcko                  0.720   pixBitCount<2>
+                                                       pixBitCount_2
+    SLICE_X30Y13.G3      net (fanout=6)        0.465   pixBitCount<2>
+    SLICE_X30Y13.Y       Tilo                  0.608   bitCount_cmp_eq00002
+                                                       bitCount_cmp_eq0000_SW0
+    SLICE_X26Y13.G2      net (fanout=3)        0.980   N6
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.COUT    Tbyp                  0.128   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.Y       Tciny                 0.923   bitCount_mux0001<30>
+                                                       Maddsub_bitCount_mux0001_cy<30>
+                                                       Maddsub_bitCount_mux0001_xor<31>
+    SLICE_X28Y23.F1      net (fanout=1)        0.242   bitCount_mux0001<31>
+    SLICE_X28Y23.CLK     Tfck                  0.690   bitCount<31>
+                                                       bitCount_mux0002<0>1
+                                                       bitCount_31
+    -------------------------------------------------  ---------------------------
+    Total                                      9.805ns (6.794ns logic, 3.011ns route)
+                                                       (69.3% logic, 30.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.879ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_3 (FF)
+  Destination:          bitCount_31 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      9.121ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_3 to bitCount_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X30Y12.YQ      Tcko                  0.720   pixBitCount<4>
+                                                       pixBitCount_3
+    SLICE_X26Y13.G1      net (fanout=6)        1.369   pixBitCount<3>
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.COUT    Tbyp                  0.128   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.Y       Tciny                 0.923   bitCount_mux0001<30>
+                                                       Maddsub_bitCount_mux0001_cy<30>
+                                                       Maddsub_bitCount_mux0001_xor<31>
+    SLICE_X28Y23.F1      net (fanout=1)        0.242   bitCount_mux0001<31>
+    SLICE_X28Y23.CLK     Tfck                  0.690   bitCount<31>
+                                                       bitCount_mux0002<0>1
+                                                       bitCount_31
+    -------------------------------------------------  ---------------------------
+    Total                                      9.121ns (6.186ns logic, 2.935ns route)
+                                                       (67.8% logic, 32.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point bitCount_30 (SLICE_X28Y23.G4), 261 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     15.145ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_0 (FF)
+  Destination:          bitCount_30 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      9.855ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_0 to bitCount_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y11.YQ      Tcko                  0.720   pixBitCount<1>
+                                                       pixBitCount_0
+    SLICE_X30Y13.G1      net (fanout=6)        0.683   pixBitCount<0>
+    SLICE_X30Y13.Y       Tilo                  0.608   bitCount_cmp_eq00002
+                                                       bitCount_cmp_eq0000_SW0
+    SLICE_X26Y13.G2      net (fanout=3)        0.980   N6
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.COUT    Tbyp                  0.128   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.X       Tcinx                 0.904   bitCount_mux0001<30>
+                                                       Maddsub_bitCount_mux0001_xor<30>
+    SLICE_X28Y23.G4      net (fanout=1)        0.093   bitCount_mux0001<30>
+    SLICE_X28Y23.CLK     Tgck                  0.690   bitCount<31>
+                                                       bitCount_mux0002<1>1
+                                                       bitCount_30
+    -------------------------------------------------  ---------------------------
+    Total                                      9.855ns (6.775ns logic, 3.080ns route)
+                                                       (68.7% logic, 31.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.363ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_2 (FF)
+  Destination:          bitCount_30 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      9.637ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_2 to bitCount_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y12.XQ      Tcko                  0.720   pixBitCount<2>
+                                                       pixBitCount_2
+    SLICE_X30Y13.G3      net (fanout=6)        0.465   pixBitCount<2>
+    SLICE_X30Y13.Y       Tilo                  0.608   bitCount_cmp_eq00002
+                                                       bitCount_cmp_eq0000_SW0
+    SLICE_X26Y13.G2      net (fanout=3)        0.980   N6
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.COUT    Tbyp                  0.128   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.X       Tcinx                 0.904   bitCount_mux0001<30>
+                                                       Maddsub_bitCount_mux0001_xor<30>
+    SLICE_X28Y23.G4      net (fanout=1)        0.093   bitCount_mux0001<30>
+    SLICE_X28Y23.CLK     Tgck                  0.690   bitCount<31>
+                                                       bitCount_mux0002<1>1
+                                                       bitCount_30
+    -------------------------------------------------  ---------------------------
+    Total                                      9.637ns (6.775ns logic, 2.862ns route)
+                                                       (70.3% logic, 29.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.047ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_3 (FF)
+  Destination:          bitCount_30 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      8.953ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_3 to bitCount_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X30Y12.YQ      Tcko                  0.720   pixBitCount<4>
+                                                       pixBitCount_3
+    SLICE_X26Y13.G1      net (fanout=6)        1.369   pixBitCount<3>
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.COUT    Tbyp                  0.128   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<29>
+    SLICE_X29Y23.X       Tcinx                 0.904   bitCount_mux0001<30>
+                                                       Maddsub_bitCount_mux0001_xor<30>
+    SLICE_X28Y23.G4      net (fanout=1)        0.093   bitCount_mux0001<30>
+    SLICE_X28Y23.CLK     Tgck                  0.690   bitCount<31>
+                                                       bitCount_mux0002<1>1
+                                                       bitCount_30
+    -------------------------------------------------  ---------------------------
+    Total                                      8.953ns (6.167ns logic, 2.786ns route)
+                                                       (68.9% logic, 31.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point bitCount_29 (SLICE_X28Y22.F2), 252 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     15.178ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_0 (FF)
+  Destination:          bitCount_29 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      9.822ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_0 to bitCount_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y11.YQ      Tcko                  0.720   pixBitCount<1>
+                                                       pixBitCount_0
+    SLICE_X30Y13.G1      net (fanout=6)        0.683   pixBitCount<0>
+    SLICE_X30Y13.Y       Tilo                  0.608   bitCount_cmp_eq00002
+                                                       bitCount_cmp_eq0000_SW0
+    SLICE_X26Y13.G2      net (fanout=3)        0.980   N6
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.Y       Tciny                 0.923   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_xor<29>
+    SLICE_X28Y22.F2      net (fanout=1)        0.169   bitCount_mux0001<29>
+    SLICE_X28Y22.CLK     Tfck                  0.690   bitCount<29>
+                                                       bitCount_mux0002<2>1
+                                                       bitCount_29
+    -------------------------------------------------  ---------------------------
+    Total                                      9.822ns (6.666ns logic, 3.156ns route)
+                                                       (67.9% logic, 32.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.396ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_2 (FF)
+  Destination:          bitCount_29 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      9.604ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_2 to bitCount_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y12.XQ      Tcko                  0.720   pixBitCount<2>
+                                                       pixBitCount_2
+    SLICE_X30Y13.G3      net (fanout=6)        0.465   pixBitCount<2>
+    SLICE_X30Y13.Y       Tilo                  0.608   bitCount_cmp_eq00002
+                                                       bitCount_cmp_eq0000_SW0
+    SLICE_X26Y13.G2      net (fanout=3)        0.980   N6
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.Y       Tciny                 0.923   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_xor<29>
+    SLICE_X28Y22.F2      net (fanout=1)        0.169   bitCount_mux0001<29>
+    SLICE_X28Y22.CLK     Tfck                  0.690   bitCount<29>
+                                                       bitCount_mux0002<2>1
+                                                       bitCount_29
+    -------------------------------------------------  ---------------------------
+    Total                                      9.604ns (6.666ns logic, 2.938ns route)
+                                                       (69.4% logic, 30.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.080ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pixBitCount_3 (FF)
+  Destination:          bitCount_29 (FF)
+  Requirement:          25.000ns
+  Data Path Delay:      8.920ns (Levels of Logic = 18)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: pixBitCount_3 to bitCount_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X30Y12.YQ      Tcko                  0.720   pixBitCount<4>
+                                                       pixBitCount_3
+    SLICE_X26Y13.G1      net (fanout=6)        1.369   pixBitCount<3>
+    SLICE_X26Y13.Y       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       bitCount_cmp_eq0000_1
+    SLICE_X26Y13.F3      net (fanout=2)        0.017   bitCount_cmp_eq00001
+    SLICE_X26Y13.X       Tilo                  0.608   Mrom_bitCount_mux00031
+                                                       Mrom_bitCount_mux000311
+    SLICE_X29Y8.BX       net (fanout=1)        1.307   Mrom_bitCount_mux00031
+    SLICE_X29Y8.COUT     Tbxcy                 0.845   bitCount_mux0001<0>
+                                                       Maddsub_bitCount_mux0001_cy<0>
+                                                       Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.CIN      net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<1>
+    SLICE_X29Y9.COUT     Tbyp                  0.128   bitCount_mux0001<2>
+                                                       Maddsub_bitCount_mux0001_cy<2>
+                                                       Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<3>
+    SLICE_X29Y10.COUT    Tbyp                  0.128   bitCount_mux0001<4>
+                                                       Maddsub_bitCount_mux0001_cy<4>
+                                                       Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<5>
+    SLICE_X29Y11.COUT    Tbyp                  0.128   bitCount_mux0001<6>
+                                                       Maddsub_bitCount_mux0001_cy<6>
+                                                       Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<7>
+    SLICE_X29Y12.COUT    Tbyp                  0.128   bitCount_mux0001<8>
+                                                       Maddsub_bitCount_mux0001_cy<8>
+                                                       Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<9>
+    SLICE_X29Y13.COUT    Tbyp                  0.128   bitCount_mux0001<10>
+                                                       Maddsub_bitCount_mux0001_cy<10>
+                                                       Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<11>
+    SLICE_X29Y14.COUT    Tbyp                  0.128   bitCount_mux0001<12>
+                                                       Maddsub_bitCount_mux0001_cy<12>
+                                                       Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<13>
+    SLICE_X29Y15.COUT    Tbyp                  0.128   bitCount_mux0001<14>
+                                                       Maddsub_bitCount_mux0001_cy<14>
+                                                       Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<15>
+    SLICE_X29Y16.COUT    Tbyp                  0.128   bitCount_mux0001<16>
+                                                       Maddsub_bitCount_mux0001_cy<16>
+                                                       Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<17>
+    SLICE_X29Y17.COUT    Tbyp                  0.128   bitCount_mux0001<18>
+                                                       Maddsub_bitCount_mux0001_cy<18>
+                                                       Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<19>
+    SLICE_X29Y18.COUT    Tbyp                  0.128   bitCount_mux0001<20>
+                                                       Maddsub_bitCount_mux0001_cy<20>
+                                                       Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<21>
+    SLICE_X29Y19.COUT    Tbyp                  0.128   bitCount_mux0001<22>
+                                                       Maddsub_bitCount_mux0001_cy<22>
+                                                       Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<23>
+    SLICE_X29Y20.COUT    Tbyp                  0.128   bitCount_mux0001<24>
+                                                       Maddsub_bitCount_mux0001_cy<24>
+                                                       Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<25>
+    SLICE_X29Y21.COUT    Tbyp                  0.128   bitCount_mux0001<26>
+                                                       Maddsub_bitCount_mux0001_cy<26>
+                                                       Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.CIN     net (fanout=1)        0.000   Maddsub_bitCount_mux0001_cy<27>
+    SLICE_X29Y22.Y       Tciny                 0.923   bitCount_mux0001<28>
+                                                       Maddsub_bitCount_mux0001_cy<28>
+                                                       Maddsub_bitCount_mux0001_xor<29>
+    SLICE_X28Y22.F2      net (fanout=1)        0.169   bitCount_mux0001<29>
+    SLICE_X28Y22.CLK     Tfck                  0.690   bitCount<29>
+                                                       bitCount_mux0002<2>1
+                                                       bitCount_29
+    -------------------------------------------------  ---------------------------
+    Total                                      8.920ns (6.058ns logic, 2.862ns route)
+                                                       (67.9% logic, 32.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 25 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point pixBitCount_1 (SLICE_X31Y11.F4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.965ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pixBitCount_0 (FF)
+  Destination:          pixBitCount_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.965ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 25.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: pixBitCount_0 to pixBitCount_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y11.YQ      Tcko                  0.576   pixBitCount<1>
+                                                       pixBitCount_0
+    SLICE_X31Y11.F4      net (fanout=6)        0.328   pixBitCount<0>
+    SLICE_X31Y11.CLK     Tckf        (-Th)    -0.061   pixBitCount<1>
+                                                       pixBitCount_mux0001<3>1
+                                                       pixBitCount_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.965ns (0.637ns logic, 0.328ns route)
+                                                       (66.0% logic, 34.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pixDupCount_1 (SLICE_X26Y19.F4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.979ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pixDupCount_1 (FF)
+  Destination:          pixDupCount_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.979ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 25.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: pixDupCount_1 to pixDupCount_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y19.XQ      Tcko                  0.576   pixDupCount<1>
+                                                       pixDupCount_1
+    SLICE_X26Y19.F4      net (fanout=2)        0.297   pixDupCount<1>
+    SLICE_X26Y19.CLK     Tckf        (-Th)    -0.106   pixDupCount<1>
+                                                       pixDupCount_mux0001<0>1
+                                                       pixDupCount_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.979ns (0.682ns logic, 0.297ns route)
+                                                       (69.7% logic, 30.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pixBitCount_0 (SLICE_X31Y11.G4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.985ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pixBitCount_0 (FF)
+  Destination:          pixBitCount_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.985ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 25.000ns
+  Destination Clock:    clk_BUFGP rising at 25.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: pixBitCount_0 to pixBitCount_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y11.YQ      Tcko                  0.576   pixBitCount<1>
+                                                       pixBitCount_0
+    SLICE_X31Y11.G4      net (fanout=6)        0.348   pixBitCount<0>
+    SLICE_X31Y11.CLK     Tckg        (-Th)    -0.061   pixBitCount<1>
+                                                       pixBitCount_mux0001<4>1
+                                                       pixBitCount_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.985ns (0.637ns logic, 0.348ns route)
+                                                       (64.7% logic, 35.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 25 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 23.428ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 25.000ns
+  Low pulse: 12.500ns
+  Low pulse limit: 0.786ns (Tcl)
+  Physical resource: timer1<0>/CLK
+  Logical resource: timer1_0/CK
+  Location pin: SLICE_X20Y0.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 23.428ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 25.000ns
+  High pulse: 12.500ns
+  High pulse limit: 0.786ns (Tch)
+  Physical resource: timer1<0>/CLK
+  Logical resource: timer1_0/CK
+  Location pin: SLICE_X20Y0.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 23.428ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 25.000ns
+  Low pulse: 12.500ns
+  Low pulse limit: 0.786ns (Tcl)
+  Physical resource: timer1<0>/CLK
+  Logical resource: timer1_1/CK
+  Location pin: SLICE_X20Y0.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   10.023|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 9301 paths, 0 nets, and 509 connections
+
+Design statistics:
+   Minimum period:  10.023ns{1}   (Maximum frequency:  99.771MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri Jul 11 11:50:56 2014 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 170 MB
+
+
+

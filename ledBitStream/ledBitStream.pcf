@@ -1,0 +1,36 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Jul 11 11:50:47 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "hbOut" LOCATE = SITE "P11" LEVEL 1;
+COMP "clk" LOCATE = SITE "T9" LEVEL 1;
+COMP "pixDupFactor<0>" LOCATE = SITE "F12" LEVEL 1;
+COMP "pixDupFactor<1>" LOCATE = SITE "G12" LEVEL 1;
+COMP "dataOut" LOCATE = SITE "N7" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP clk = BEL "bitCount_0" BEL "bitCount_1" BEL "bitCount_2" BEL
+        "bitCount_3" BEL "bitCount_4" BEL "bitCount_5" BEL "bitCount_6" BEL
+        "bitCount_7" BEL "bitCount_8" BEL "bitCount_9" BEL "bitCount_10" BEL
+        "bitCount_11" BEL "bitCount_12" BEL "bitCount_13" BEL "bitCount_14"
+        BEL "bitCount_15" BEL "bitCount_16" BEL "bitCount_17" BEL
+        "bitCount_18" BEL "bitCount_19" BEL "bitCount_20" BEL "bitCount_21"
+        BEL "bitCount_22" BEL "bitCount_23" BEL "bitCount_24" BEL
+        "bitCount_25" BEL "bitCount_26" BEL "bitCount_27" BEL "bitCount_28"
+        BEL "bitCount_29" BEL "bitCount_30" BEL "bitCount_31" BEL
+        "pixDupCount_0" BEL "pixDupCount_1" BEL "pixBitCount_0" BEL
+        "pixBitCount_1" BEL "pixBitCount_2" BEL "pixBitCount_3" BEL
+        "pixBitCount_4" BEL "counter_0" BEL "counter_1" BEL "counter_2" BEL
+        "counter_3" BEL "counter_4" BEL "counter_5" BEL "counter_6" BEL
+        "counter_7" BEL "counter_8" BEL "counter_9" BEL "counter_10" BEL
+        "counter_11" BEL "dataOut" BEL "hbOut" BEL "timer1_0" BEL "timer1_1"
+        BEL "timer1_2" BEL "timer1_3" BEL "timer1_4" BEL "timer1_5" BEL
+        "timer1_6" BEL "timer1_7" BEL "timer1_8" BEL "timer1_9" BEL
+        "timer1_10" BEL "timer1_11" BEL "timer1_12" BEL "timer1_13" BEL
+        "timer1_14" BEL "timer1_15" BEL "timer1_16" BEL "timer1_17" BEL
+        "timer1_18" BEL "timer1_19" BEL "timer1_20" BEL "timer1_21" BEL
+        "timer1_22" BEL "timer1_23" BEL "timer1_24" BEL "timer1_25" BEL
+        "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "clk" 25 ns HIGH 50%;
+SCHEMATIC END;
+

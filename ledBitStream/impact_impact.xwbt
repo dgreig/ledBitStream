@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\Engineering\FPGA\VHDL\ledBitStream\impact.xsl
+OUTFILE=C:\Engineering\FPGA\VHDL\ledBitStream\impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=C:\Engineering\FPGA\VHDL\ledBitStream
+LICENSE=iMPACT
+USER_INFO=iMPACT

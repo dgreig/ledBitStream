@@ -1,0 +1,2 @@
+vhdl work "ledBitStream_pkg.vhd"
+vhdl work "LEDS.vhd"

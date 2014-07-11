@@ -1,0 +1,35 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Fri Jul 11 11:05:38 2014
+# Process ID: 7576
+# Log file: C:/Engineering/FPGA/VHDL/ledBitStream/planAhead_run_1/planAhead.log
+# Journal file: C:/Engineering/FPGA/VHDL/ledBitStream/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Engineering/FPGA/VHDL/ledBitStream/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin M14 [get_ports {pixDupFactor[1]}]
+endgroup
+startgroup
+set_property package_pin F12 [get_ports {pixDupFactor[1]}]
+endgroup
+startgroup
+set_property package_pin G12 [get_ports {pixDupFactor[0]}]
+endgroup
+save_constraints
+startgroup
+set_property package_pin G12 [get_ports {pixDupFactor[0]}]
+endgroup
+startgroup
+set_property package_pin F5 [get_ports {pixDupFactor[1]}]
+endgroup
+startgroup
+set_property package_pin F12 [get_ports {pixDupFactor[0]}]
+endgroup
+save_constraints
+startgroup
+set_property package_pin G12 [get_ports {pixDupFactor[1]}]
+endgroup
+save_constraints

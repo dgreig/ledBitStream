@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Engineering\FPGA\VHDL\ledBitStream\ledBitStream.ncd
+OUTFILE=C:\Engineering\FPGA\VHDL\ledBitStream\ledBitStream.bit
+FAMILY=Spartan3
+PART=xc3s200-4ft256
+WORKINGDIR=C:\Engineering\FPGA\VHDL\ledBitStream
+LICENSE=WebPack
+USER_INFO=210734399_0_0_764
